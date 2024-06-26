@@ -4,11 +4,9 @@ const mongoose = require("mongoose");
 const passportConfig = require("./lib/passportConfig");
 const cors = require("cors");
 const fs = require("fs");
-
+require('dotenv').config();
 // MongoDB
-const MONGO_URI =
-  "mongodb+srv://mahamadhashish241:9xazDpXYPOh8ok2g@cluster0.fzraotj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-console.log("hello");
+const MONGO_URI = process.env.MONGO_URI;
 mongoose
   .connect(MONGO_URI, {
     useNewUrlParser: true,
